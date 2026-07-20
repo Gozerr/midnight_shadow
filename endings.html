@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Полуночная Тень — Концовки</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="endings">
+    <div class="rain"></div>
+    <div class="backdrop"></div>
+    <div class="crt"></div>
+    <div class="wrap">
+      <header class="topbar">
+        <div>
+          <p class="overline">Финал</p>
+          <h1>Последняя дверь</h1>
+        </div>
+        <div class="timer-panel" aria-live="polite">
+          <span id="timer-display">10:00:00</span>
+          <button id="timer-toggle" class="button small" type="button">Пауза</button>
+        </div>
+      </header>
+
+      <nav class="nav" aria-label="Разделы дела">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="clues.html">Улики</a>
+        <a class="nav-link" href="suspects.html">Подозреваемые</a>
+        <a class="nav-link" href="journal.html">Журнал</a>
+        <a class="nav-link active" href="endings.html">Концовки</a>
+      </nav>
+
+      <main class="content">
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="overline">Финальный ввод</p>
+              <h2>Последняя дверь</h2>
+            </div>
+            <span id="ending-status" class="status-pill">запечатано</span>
+          </div>
+          <p class="hint">Финальный код раскрывает только одну концовку. Итог зависит от открытых материалов и выбранной версии следствия.</p>
+          <div class="password-box">
+            <label for="final-password">Финальный код</label>
+            <input id="final-password" type="text" autocomplete="off" placeholder="Введите код" />
+            <button id="unlock-ending" class="button" type="button">Распахнуть последнюю дверь</button>
+          </div>
+          <div id="ending-content" class="locked-panel"></div>
+        </section>
+      </main>
+    </div>
+
+    <script defer src="js/gameData.js"></script>
+    <script defer src="js/dialogues.js"></script>
+    <script defer src="js/progress.js"></script>
+    <script defer src="js/main.js"></script>
+  </body>
+</html>

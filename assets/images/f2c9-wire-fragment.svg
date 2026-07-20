@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#d8c28c"/>
+  <path d="M38 42h824v472H38z" fill="#ead9a5" stroke="#68422a" stroke-width="6"/>
+  <path d="M65 95h760M65 146h640M65 197h725M65 248h610M65 299h740M65 350h525" stroke="#4d3526" stroke-width="5" opacity=".45"/>
+  <text x="84" y="118" font-family="Courier New, monospace" font-size="34" fill="#2c2018">ЛАНСКИЙ НЕ ПОДПИСЫВАЙ</text>
+  <text x="84" y="220" font-family="Courier New, monospace" font-size="34" fill="#2c2018">ПРИСТАНЬ СЛЕВА ОТ ЧАСОВ</text>
+  <text x="84" y="322" font-family="Courier New, monospace" font-size="44" fill="#7d2923">СЕВЕР</text>
+  <path d="M670 72l170 96-126 83 108 132-230 70-88-164z" fill="#c9ab72" opacity=".65"/>
+  <path d="M40 42l240 72-120 86 180 90-302 224z" fill="#b99359" opacity=".38"/>
+</svg>

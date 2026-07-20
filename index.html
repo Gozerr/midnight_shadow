@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ARG-детектив Полуночная Тень: статическая игра для GitHub Pages." />
+    <title>Полуночная Тень — Дело</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="index">
+    <div class="rain"></div>
+    <div class="backdrop"></div>
+    <div class="crt"></div>
+    <div class="wrap">
+      <header class="topbar">
+        <div>
+          <p class="overline">Дело №14 / 47</p>
+          <h1>Полуночная Тень</h1>
+        </div>
+        <div class="timer-panel" aria-live="polite">
+          <span id="timer-display">10:00:00</span>
+          <button id="timer-toggle" class="button small" type="button">Пауза</button>
+        </div>
+      </header>
+
+      <nav class="nav" aria-label="Разделы дела">
+        <a class="nav-link active" href="index.html">Главная</a>
+        <a class="nav-link" href="clues.html">Улики</a>
+        <a class="nav-link" href="suspects.html">Подозреваемые</a>
+        <a class="nav-link" href="journal.html">Журнал</a>
+        <a class="nav-link" href="endings.html">Концовки</a>
+      </nav>
+
+      <main class="content">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="overline">1948 · кабинет старого следователя</p>
+            <h2>Убийство Александра Воронова</h2>
+            <p>
+              Воронов найден мёртвым в собственном кабинете за семь минут до полуночи.
+              На столе остались мокрая перчатка, обрывок телеграммы и стакан с горьким миндальным запахом.
+            </p>
+          </div>
+          <div class="case-stamp" aria-hidden="true">
+            <span>СРОЧНО</span>
+            <strong>10:00</strong>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="overline">Входящий пакет</p>
+              <h3>Папка расследования</h3>
+            </div>
+            <span id="global-status" class="status-pill">закрыто</span>
+          </div>
+          <p id="intro-status" class="hint">
+            Холодный старт: пароль для первого досье спрятан в материалах сцены. Ищите слова, которые повторяются слишком часто.
+          </p>
+          <div class="password-box">
+            <label for="entry-password">Пароль доступа</label>
+            <input id="entry-password" type="text" autocomplete="off" placeholder="Введите пароль" />
+            <button id="unlock-dossier" class="button" type="button">Открыть досье</button>
+          </div>
+          <div class="button-row">
+            <button id="self-test" class="button secondary" type="button">Самопроверка</button>
+            <span id="js-status" class="status-pill">JS не загружен</span>
+          </div>
+          <div id="dossier-content" class="locked-panel">
+            <p>Доступ к досье закрыт. Введите пароль, чтобы увидеть основные факты.</p>
+          </div>
+        </section>
+
+        <section class="panel split">
+          <div>
+            <p class="overline">Правило дела</p>
+            <h3>Минимум подсказок</h3>
+            <p>
+              Игра рассчитана на поиск в документах, сопоставление времени, адресов и показаний. Ваши выборы в журнале меняют финальную развязку.
+            </p>
+          </div>
+          <div class="type-card">
+            <span>машинка Ундервуд</span>
+            <p id="typewriter-line">Дождь выбивает азбуку Морзе по подоконнику.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script defer src="js/gameData.js"></script>
+    <script defer src="js/dialogues.js"></script>
+    <script defer src="js/progress.js"></script>
+    <script defer src="js/main.js"></script>
+  </body>
+</html>

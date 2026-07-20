@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Полуночная Тень — Подозреваемые</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="suspects">
+    <div class="rain"></div>
+    <div class="backdrop"></div>
+    <div class="crt"></div>
+    <div class="wrap">
+      <header class="topbar">
+        <div>
+          <p class="overline">Картотека</p>
+          <h1>Лица дела</h1>
+        </div>
+        <div class="timer-panel" aria-live="polite">
+          <span id="timer-display">10:00:00</span>
+          <button id="timer-toggle" class="button small" type="button">Пауза</button>
+        </div>
+      </header>
+
+      <nav class="nav" aria-label="Разделы дела">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="clues.html">Улики</a>
+        <a class="nav-link active" href="suspects.html">Подозреваемые</a>
+        <a class="nav-link" href="journal.html">Журнал</a>
+        <a class="nav-link" href="endings.html">Концовки</a>
+      </nav>
+
+      <main class="content">
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="overline">Слова, алиби, мотив</p>
+              <h2>Карточки подозреваемых</h2>
+            </div>
+            <span id="suspect-count" class="status-pill">0 допрошено</span>
+          </div>
+          <p class="hint">Каждое лицо скрывает три слоя правды. Ответы персонажей появляются после открытия связанных материалов.</p>
+          <div id="suspects-list" class="card-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script defer src="js/gameData.js"></script>
+    <script defer src="js/dialogues.js"></script>
+    <script defer src="js/progress.js"></script>
+    <script defer src="js/main.js"></script>
+  </body>
+</html>
