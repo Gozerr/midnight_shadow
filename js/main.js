@@ -30,6 +30,30 @@ const page = document.body.dataset.page;
 
 const $ = (selector) => document.querySelector(selector);
 
+function syncStateFromStorage() {
+  const freshState = loadState();
+  if (freshState && JSON.stringify(freshState) !== JSON.stringify(state)) {
+    state = freshState;
+  }
+}
+
+function refreshTimerView() {
+  syncStateFromStorage();
+  renderTimer();
+}
+
+window.addEventListener("storage", (event) => {
+  if (event.key === "midnight-shadow-state") {
+    refreshTimerView();
+  }
+});
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
+    refreshTimerView();
+  }
+});
+
 function markJsLoaded() {
   const status = $("#js-status");
   if (status) {
@@ -101,8 +125,8 @@ function setupTimer() {
       renderTimer();
     });
   }
-  renderTimer();
-  setInterval(renderTimer, 1000);
+  refreshTimerView();
+  setInterval(refreshTimerView, 1000);
 }
 
 function renderDossier() {

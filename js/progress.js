@@ -31,7 +31,9 @@ function loadState() {
   }
 
   if (!raw) {
-    return { ...defaults, startedAt: Date.now() };
+    const initialState = { ...defaults, startedAt: Date.now() };
+    saveState(initialState);
+    return initialState;
   }
 
   try {
