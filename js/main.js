@@ -1,3 +1,7 @@
+import "./progress.js";
+import "./dialogues.js";
+import "./gameData.js";
+
 const {
   GAME_DURATION_MS,
   clues,
