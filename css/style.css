@@ -241,6 +241,17 @@ p {
   background:
     linear-gradient(125deg, rgba(38, 37, 38, 0.93), rgba(18, 15, 13, 0.9)),
     repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.02) 0 1px, transparent 1px 8px);
+  position: relative;
+  overflow: hidden;
+}
+
+.panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 0%, rgba(212, 175, 136, 0.06) 45%, transparent 100%);
+  mix-blend-mode: screen;
 }
 
 .split {
@@ -484,6 +495,33 @@ img.material-preview {
 .note {
   padding: 14px;
   white-space: pre-wrap;
+}
+
+.brief-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.brief-card,
+.quote-box {
+  padding: 18px;
+  border: 1px solid rgba(212, 175, 136, 0.2);
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.brief-card h4 {
+  margin-bottom: 8px;
+  color: var(--brass);
+  font-family: "Courier New", monospace;
+  text-transform: uppercase;
+}
+
+.quote-box {
+  margin-top: 12px;
+  font-style: italic;
+  color: #e9d8b2;
 }
 
 .type-card {

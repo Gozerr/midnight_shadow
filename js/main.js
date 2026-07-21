@@ -8,8 +8,10 @@ const {
   dossier,
   endings,
   journalChoices,
+  missionBrief,
   passwords,
   suspects,
+  unlockHints,
 } = window.MidnightShadowData;
 
 const dialogues = window.MidnightShadowDialogues;
@@ -129,6 +131,28 @@ function setupTimer() {
   setInterval(refreshTimerView, 1000);
 }
 
+function renderMissionBoard() {
+  const board = $("#mission-board");
+  if (!board) {
+    return;
+  }
+
+  board.innerHTML = `
+    <article class="brief-card">
+      <h4>Цель</h4>
+      <p>${missionBrief.objective}</p>
+    </article>
+    <article class="brief-card">
+      <h4>Ключевые ориентиры</h4>
+      <p>${Object.values(unlockHints).slice(0, 3).join(" ")}</p>
+    </article>
+    <article class="brief-card">
+      <h4>Режим дела</h4>
+      <p>Система распознаёт подмену фактов, верифицирует пароли и скрывает финал до последнего ввода.</p>
+    </article>
+  `;
+}
+
 function renderDossier() {
   const content = $("#dossier-content");
   const status = $("#global-status");
@@ -155,6 +179,7 @@ function renderDossier() {
 
 function setupIndex() {
   renderDossier();
+  renderMissionBoard();
   const test = $("#self-test");
   const input = $("#entry-password");
   const button = $("#unlock-dossier");
