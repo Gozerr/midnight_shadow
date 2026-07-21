@@ -109,40 +109,50 @@ const clues = [
   },
 ];
 
-const suspects = [
-  {
-    id: "olga",
-    name: "Ольга Воронова",
-    role: "жена",
-    motive: "Наследство и годы унижения.",
-    alibi: "Утверждает, что в 23:40 звонила доктору.",
-    unlock: "dossier",
-  },
-  {
-    id: "maxim",
-    name: "Максим Ланский",
-    role: "партнёр",
-    motive: "Сорванная сделка и долги перед портовыми людьми.",
-    alibi: "Говорит, что уехал до дождя, но его плащ был мокрым.",
-    unlock: "telegram",
-  },
-  {
-    id: "anna",
-    name: "Анна Белецкая",
-    role: "секретарь",
-    motive: "Подставные выплаты и исчезнувшее письмо.",
-    alibi: "Печатала отчёт в приёмной до полуночи.",
-    unlock: "ledger",
-  },
-  {
-    id: "dmitry",
-    name: "Дмитрий Воронов",
-    role: "сын",
-    motive: "Отец собирался лишить его денег и имени.",
-    alibi: "Играл в клубе «Сатурн», но счёт закрыт в 23:21.",
-    unlock: "record",
-  },
-];
+const suspectProfiles = window.MidnightShadowProfiles || [];
+
+const suspects = suspectProfiles.length
+  ? suspectProfiles.map((profile) => ({
+      ...profile,
+      role: profile.role,
+      motive: profile.motive,
+      alibi: profile.alibi,
+      unlock: profile.unlock,
+    }))
+  : [
+      {
+        id: "olga",
+        name: "Ольга Воронова",
+        role: "жена",
+        motive: "Наследство и годы унижения.",
+        alibi: "Утверждает, что в 23:40 звонила доктору.",
+        unlock: "dossier",
+      },
+      {
+        id: "maxim",
+        name: "Максим Ланский",
+        role: "партнёр",
+        motive: "Сорванная сделка и долги перед портовыми людьми.",
+        alibi: "Говорит, что уехал до дождя, но его плащ был мокрым.",
+        unlock: "telegram",
+      },
+      {
+        id: "anna",
+        name: "Анна Белецкая",
+        role: "секретарь",
+        motive: "Подставные выплаты и исчезнувшее письмо.",
+        alibi: "Печатала отчёт в приёмной до полуночи.",
+        unlock: "ledger",
+      },
+      {
+        id: "dmitry",
+        name: "Дмитрий Воронов",
+        role: "сын",
+        motive: "Отец собирался лишить его денег и имени.",
+        alibi: "Играл в клубе «Сатурн», но счёт закрыт в 23:21.",
+        unlock: "record",
+      },
+    ];
 
 const journalChoices = [
   {
