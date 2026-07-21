@@ -13,9 +13,25 @@
     <div class="crt"></div>
     <div class="wrap">
       <header class="topbar">
-        <div>
-          <p class="overline">Дело №14 / 47</p>
-          <h1>Полуночная Тень</h1>
+        <div class="topbar-main">
+          <div>
+            <p class="overline">Дело №14 / 47</p>
+            <h1>Полуночная Тень</h1>
+          </div>
+          <div class="topbar-meta">
+            <div class="meta-item">
+              <span>Дата расследования</span>
+              <strong id="case-date">02.04.1948</strong>
+            </div>
+            <div class="meta-item">
+              <span>Статус расследования</span>
+              <strong id="case-status">В работе</strong>
+            </div>
+            <div class="meta-item">
+              <span>Текущее время</span>
+              <strong id="current-time"></strong>
+            </div>
+          </div>
         </div>
         <div class="timer-panel" aria-live="polite">
           <span id="timer-display">10:00:00</span>
@@ -23,15 +39,27 @@
         </div>
       </header>
 
-      <nav class="nav" aria-label="Разделы дела">
-        <a class="nav-link active" href="index.html">Главная</a>
-        <a class="nav-link" href="clues.html">Улики</a>
-        <a class="nav-link" href="suspects.html">Подозреваемые</a>
-        <a class="nav-link" href="journal.html">Журнал</a>
-        <a class="nav-link" href="endings.html">Концовки</a>
-      </nav>
+      <div class="workspace-grid">
+        <aside class="sidebar">
+          <section class="sidebar-card">
+            <p class="overline">Рабочее досье</p>
+            <h2>Настольный файл</h2>
+            <p>Кейс: убийство Воронова · архив 1948. Здесь собираются новые материалы, выносятся версии и следственные гипотезы.</p>
+          </section>
+          <nav class="nav" aria-label="Навигация дела">
+            <a class="nav-link active" href="index.html">Главная</a>
+            <a class="nav-link" href="clues.html">Улики</a>
+            <a class="nav-link" href="suspects.html">Подозреваемые</a>
+            <a class="nav-link" href="journal.html">Журнал</a>
+            <a class="nav-link" href="endings.html">Концовки</a>
+          </nav>
+          <section class="sidebar-card">
+            <p class="overline">Текущая задача</p>
+            <p>Открыть первое досье, проверить пароль и актуализировать список улик.</p>
+          </section>
+        </aside>
 
-      <main class="content">
+        <main class="content workbench">
         <section class="hero">
           <div class="hero-copy">
             <p class="overline">1948 · кабинет старого следователя</p>
@@ -97,6 +125,45 @@
           </div>
         </section>
       </main>
+
+      <aside class="workspace-context">
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Последние найденные улики</p>
+            <h3>Материалы</h3>
+          </div>
+          <ul class="context-list">
+            <li>Запись телеграммы</li>
+            <li>Перчатка со следами</li>
+            <li>Письмо на имя Воронова</li>
+          </ul>
+        </section>
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Новые материалы</p>
+            <h3>Контекст</h3>
+          </div>
+          <p class="context-note">Вводимый пароль открывает сначала только одно досье. Не торопитесь: каждое новое сообщение изменит ход расследования.</p>
+        </section>
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Последние действия</p>
+            <h3>Журнал</h3>
+          </div>
+          <ul class="context-list">
+            <li>Начало дела</li>
+            <li>Первый обход сцены</li>
+            <li>Открыт раздел досье</li>
+          </ul>
+        </section>
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Заметки следователя</p>
+            <h3>Набросок</h3>
+          </div>
+          <p class="context-note">Код ищется в повторяющихся словах. Сконцентрируйтесь на документах, которые встречаются в каждом свидетельстве.</p>
+        </section>
+      </aside>
     </div>
 
     <script src="js/data.js"></script>

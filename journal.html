@@ -12,9 +12,25 @@
     <div class="crt"></div>
     <div class="wrap">
       <header class="topbar">
-        <div>
-          <p class="overline">Журнал расследования</p>
-          <h1>Записки следователя</h1>
+        <div class="topbar-main">
+          <div>
+            <p class="overline">Журнал расследования</p>
+            <h1>Записки следователя</h1>
+          </div>
+          <div class="topbar-meta">
+            <div class="meta-item">
+              <span>Дата расследования</span>
+              <strong id="case-date">02.04.1948</strong>
+            </div>
+            <div class="meta-item">
+              <span>Статус расследования</span>
+              <strong id="case-status">В работе</strong>
+            </div>
+            <div class="meta-item">
+              <span>Текущее время</span>
+              <strong id="current-time"></strong>
+            </div>
+          </div>
         </div>
         <div class="timer-panel" aria-live="polite">
           <span id="timer-display">10:00:00</span>
@@ -22,15 +38,27 @@
         </div>
       </header>
 
-      <nav class="nav" aria-label="Разделы дела">
-        <a class="nav-link" href="index.html">Главная</a>
-        <a class="nav-link" href="clues.html">Улики</a>
-        <a class="nav-link" href="suspects.html">Подозреваемые</a>
-        <a class="nav-link active" href="journal.html">Журнал</a>
-        <a class="nav-link" href="endings.html">Концовки</a>
-      </nav>
+      <div class="workspace-grid">
+        <aside class="sidebar">
+          <section class="sidebar-card">
+            <p class="overline">Досье</p>
+            <h2>Версии</h2>
+            <p>Регистрируйте варианты развития дела и проверяйте, какие факты работают на одну правду.</p>
+          </section>
+          <nav class="nav" aria-label="Навигация дела">
+            <a class="nav-link" href="index.html">Главная</a>
+            <a class="nav-link" href="clues.html">Улики</a>
+            <a class="nav-link" href="suspects.html">Подозреваемые</a>
+            <a class="nav-link active" href="journal.html">Журнал</a>
+            <a class="nav-link" href="endings.html">Концовки</a>
+          </nav>
+          <section class="sidebar-card">
+            <p class="overline">Задача</p>
+            <p>Выбрать версию, которая выдержит проверку фактами, и сохранить пояснения.</p>
+          </section>
+        </aside>
 
-      <main class="content two-column">
+        <main class="content two-column workbench">
         <section class="panel">
           <div class="section-head">
             <div>
@@ -52,6 +80,44 @@
           <div id="journal-notes" class="note-list"></div>
         </section>
       </main>
+
+      <aside class="workspace-context">
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Последние найденные улики</p>
+            <h3>Материалы</h3>
+          </div>
+          <ul class="context-list">
+            <li>Сравнение алиби</li>
+            <li>Запись показаний</li>
+            <li>Осмотр места</li>
+          </ul>
+        </section>
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Новые материалы</p>
+            <h3>Контекст</h3>
+          </div>
+          <p class="context-note">Каждое новое примечание делает версию сильнее или слабее. Пишите то, что действительно важно.</p>
+        </section>
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Последние действия</p>
+            <h3>Журнал</h3>
+          </div>
+          <ul class="context-list">
+            <li>Запись оставлена</li>
+            <li>Проверена версия дела</li>
+          </ul>
+        </section>
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Заметки следователя</p>
+            <h3>Набросок</h3>
+          </div>
+          <p class="context-note">Представьте хронологию и сопоставьте показания со статусом подозреваемых.</p>
+        </section>
+      </aside>
     </div>
 
     <script src="js/data.js"></script>

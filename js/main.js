@@ -42,6 +42,26 @@ function syncStateFromStorage() {
 function refreshTimerView() {
   syncStateFromStorage();
   renderTimer();
+  renderHeaderMetadata();
+}
+
+function renderHeaderMetadata() {
+  const dateEl = $("#case-date");
+  const timeEl = $("#current-time");
+  const statusEl = $("#case-status");
+
+  if (dateEl) {
+    dateEl.textContent = "02.04.1948";
+  }
+  if (timeEl) {
+    timeEl.textContent = new Date().toLocaleTimeString("ru-RU", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  }
+  if (statusEl) {
+    statusEl.textContent = state.paused ? "Пауза" : hasUnlock(state, "dossier") ? "В работе" : "Сбор фактов";
+  }
 }
 
 window.addEventListener("storage", (event) => {
