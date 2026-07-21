@@ -12,9 +12,25 @@
     <div class="crt"></div>
     <div class="wrap">
       <header class="topbar">
-        <div>
-          <p class="overline">Доска улик</p>
-          <h1>Старый кабинет</h1>
+        <div class="topbar-main">
+          <div>
+            <p class="overline">Доска улик</p>
+            <h1>Старый кабинет</h1>
+          </div>
+          <div class="topbar-meta">
+            <div class="meta-item">
+              <span>Дата расследования</span>
+              <strong id="case-date">02.04.1948</strong>
+            </div>
+            <div class="meta-item">
+              <span>Статус расследования</span>
+              <strong id="case-status">В работе</strong>
+            </div>
+            <div class="meta-item">
+              <span>Текущее время</span>
+              <strong id="current-time"></strong>
+            </div>
+          </div>
         </div>
         <div class="timer-panel" aria-live="polite">
           <span id="timer-display">10:00:00</span>
@@ -22,15 +38,27 @@
         </div>
       </header>
 
-      <nav class="nav" aria-label="Разделы дела">
-        <a class="nav-link" href="index.html">Главная</a>
-        <a class="nav-link active" href="clues.html">Улики</a>
-        <a class="nav-link" href="suspects.html">Подозреваемые</a>
-        <a class="nav-link" href="journal.html">Журнал</a>
-        <a class="nav-link" href="endings.html">Концовки</a>
-      </nav>
+      <div class="workspace-grid">
+        <aside class="sidebar">
+          <section class="sidebar-card">
+            <p class="overline">Досье</p>
+            <h2>Старая карта</h2>
+            <p>Собирается коллекция улик и материалов. Тонкие детали диктуют выбор следующего кода.</p>
+          </section>
+          <nav class="nav" aria-label="Навигация дела">
+            <a class="nav-link" href="index.html">Главная</a>
+            <a class="nav-link active" href="clues.html">Улики</a>
+            <a class="nav-link" href="suspects.html">Подозреваемые</a>
+            <a class="nav-link" href="journal.html">Журнал</a>
+            <a class="nav-link" href="endings.html">Концовки</a>
+          </nav>
+          <section class="sidebar-card">
+            <p class="overline">Задача</p>
+            <p>Найти код, который откроет следующую улику, и зафиксировать новую версию.</p>
+          </section>
+        </aside>
 
-      <main class="content">
+        <main class="content workbench">
         <section class="panel">
           <div class="section-head">
             <div>
@@ -48,6 +76,44 @@
           <div id="clues-list" class="evidence-board"></div>
         </section>
       </main>
+
+      <aside class="workspace-context">
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Последние найденные улики</p>
+            <h3>Материалы</h3>
+          </div>
+          <ul class="context-list">
+            <li>Почерк на письме</li>
+            <li>Загадочный код телеграммы</li>
+            <li>Следы на рукописи</li>
+          </ul>
+        </section>
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Новые материалы</p>
+            <h3>Контекст</h3>
+          </div>
+          <p class="context-note">Открывайте материалы по очереди: каждый новый документ может изменить итоговую версию.</p>
+        </section>
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Последние действия</p>
+            <h3>Журнал</h3>
+          </div>
+          <ul class="context-list">
+            <li>На столе найдена телеграмма</li>
+            <li>Сфотографирован алый конверт</li>
+          </ul>
+        </section>
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Заметки следователя</p>
+            <h3>Набросок</h3>
+          </div>
+          <p class="context-note">Внимательно сравнивайте адреса с временем убийства и показаниями свидетелей.</p>
+        </section>
+      </aside>
     </div>
 
     <script defer src="js/gameData.js"></script>

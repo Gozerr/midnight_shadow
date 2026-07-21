@@ -12,9 +12,25 @@
     <div class="crt"></div>
     <div class="wrap">
       <header class="topbar">
-        <div>
-          <p class="overline">Финал</p>
-          <h1>Последняя дверь</h1>
+        <div class="topbar-main">
+          <div>
+            <p class="overline">Финал</p>
+            <h1>Последняя дверь</h1>
+          </div>
+          <div class="topbar-meta">
+            <div class="meta-item">
+              <span>Дата расследования</span>
+              <strong id="case-date">02.04.1948</strong>
+            </div>
+            <div class="meta-item">
+              <span>Статус расследования</span>
+              <strong id="case-status">В работе</strong>
+            </div>
+            <div class="meta-item">
+              <span>Текущее время</span>
+              <strong id="current-time"></strong>
+            </div>
+          </div>
         </div>
         <div class="timer-panel" aria-live="polite">
           <span id="timer-display">10:00:00</span>
@@ -22,15 +38,27 @@
         </div>
       </header>
 
-      <nav class="nav" aria-label="Разделы дела">
-        <a class="nav-link" href="index.html">Главная</a>
-        <a class="nav-link" href="clues.html">Улики</a>
-        <a class="nav-link" href="suspects.html">Подозреваемые</a>
-        <a class="nav-link" href="journal.html">Журнал</a>
-        <a class="nav-link active" href="endings.html">Концовки</a>
-      </nav>
+      <div class="workspace-grid">
+        <aside class="sidebar">
+          <section class="sidebar-card">
+            <p class="overline">Задача</p>
+            <h2>Финальный этап</h2>
+            <p>Проверить, соответствует ли код собранной версии, прежде чем решиться на окончательное заключение.</p>
+          </section>
+          <nav class="nav" aria-label="Навигация дела">
+            <a class="nav-link" href="index.html">Главная</a>
+            <a class="nav-link" href="clues.html">Улики</a>
+            <a class="nav-link" href="suspects.html">Подозреваемые</a>
+            <a class="nav-link" href="journal.html">Журнал</a>
+            <a class="nav-link active" href="endings.html">Концовки</a>
+          </nav>
+          <section class="sidebar-card">
+            <p class="overline">Проверка</p>
+            <p>Последний ввод открывает итог, но только если версия подтверждена данными.</p>
+          </section>
+        </aside>
 
-      <main class="content">
+        <main class="content workbench">
         <section class="panel">
           <div class="section-head">
             <div>
@@ -48,6 +76,44 @@
           <div id="ending-content" class="locked-panel"></div>
         </section>
       </main>
+
+      <aside class="workspace-context">
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Последние найденные улики</p>
+            <h3>Материалы</h3>
+          </div>
+          <ul class="context-list">
+            <li>Часы на столе</li>
+            <li>Переговоры через телефон</li>
+            <li>Карта пути</li>
+          </ul>
+        </section>
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Новые материалы</p>
+            <h3>Контекст</h3>
+          </div>
+          <p class="context-note">Закрепите выводы: финальный код должен совпадать с фактической хронологией.</p>
+        </section>
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Последние действия</p>
+            <h3>Журнал</h3>
+          </div>
+          <ul class="context-list">
+            <li>Подготовлен итог</li>
+            <li>Просмотрена версия дела</li>
+          </ul>
+        </section>
+        <section class="context-widget">
+          <div class="context-head">
+            <p class="overline">Заметки следователя</p>
+            <h3>Набросок</h3>
+          </div>
+          <p class="context-note">Финальный код открывает только один результат. Проверьте, что все версии имеют документальное подтверждение.</p>
+        </section>
+      </aside>
     </div>
 
     <script defer src="js/gameData.js"></script>
