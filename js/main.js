@@ -291,19 +291,30 @@ function renderSuspects() {
   list.innerHTML = suspects
     .map((suspect, index) => {
       const unlocked = hasUnlock(state, suspect.unlock);
-      const dialogue = dialogues[suspect.id];
+      const dialogue = dialogues[suspect.id] || { locked: "Пока нет информации.", lines: [] };
       return `
         <article class="${unlocked ? "suspect-card" : "suspect-card locked"}" style="--tilt:${index % 2 ? -1 : 1.1}deg">
-          <p class="meta">${suspect.role}</p>
-          <h3>${suspect.name}</h3>
-          <p><strong>Мотив:</strong> ${unlocked ? suspect.motive : "закрыто"}</p>
-          <p><strong>Алиби:</strong> ${unlocked ? suspect.alibi : "закрыто"}</p>
-          <div class="dialogue">
-            ${
-              unlocked
-                ? dialogue.lines.map((line) => `<p>«${line}»</p>`).join("")
-                : `<p>${dialogue.locked}</p>`
-            }
+          <div class="suspect-photo-wrap">
+            <img class="suspect-photo" src="${suspect.image}" alt="${suspect.name}" />
+            <span class="suspect-badge">${suspect.suspicion}</span>
+          </div>
+          <div class="suspect-body">
+            <p class="meta">${suspect.role} • ${suspect.age} лет</p>
+            <h3>${suspect.name}</h3>
+            <p class="suspect-description">${suspect.description}</p>
+            <div class="suspect-dossier">
+              <p><strong>Мотив:</strong> ${unlocked ? suspect.motive : "закрыто"}</p>
+              <p><strong>Алиби:</strong> ${unlocked ? suspect.alibi : "закрыто"}</p>
+              <p><strong>Короткое досье:</strong> ${suspect.shortDossier}</p>
+            </div>
+            <div class="dialogue">
+              ${
+                unlocked
+                  ? dialogue.lines.map((line) => `<p>«${line}»</p>`).join("")
+                  : `<p>${dialogue.locked}</p>`
+              }
+            </div>
+            <button class="button secondary suspect-button" type="button">Допросить</button>
           </div>
         </article>
       `;
